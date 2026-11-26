@@ -5,7 +5,7 @@ Jednoduchý Android home-screen widget pro 15denní dietní plán (3 jídla denn
 ## Funkce
 
 - Widget zobrazuje aktuální den a 3 jídla dne: **jídlo – číslo krabice – množství tekutiny**.
-- Pozadí widgetu je modré (`#3035A1`), text je bílý, rámečky jídel mají zaoblené rohy a jsou barevné podle chodu dne: snídaně `#3D8F3B`, oběd `#ADAD32`, večeře `#4C4B61`. Widget je kompaktní (vejde se do 2. kroku vertikálního resizingu).
+- Pozadí widgetu je `#414159`, text je bílý, rámečky jídel mají zaoblené rohy a jsou barevné podle chodu dne: snídaně `#3D8F3B`, oběd `#ADAD32`, večeře `#131385`. Rámečky zabírají celou výšku widgetu (min. výška rámečku 53dp ≈ 1,7× původní výšky).
 - Klepnutím na řádek označíš jídlo jako snědené (přeškrtnuté + zesvětlené); dalším klepnutím značku zrušíš.
 - Jakmile jsou všechna 3 jídla dne označená, widget se automaticky přepne na další den (v pravém horním rohu je vidět „Den X/15"). Po 15. dni se zobrazí „Hotovo ✓".
 - Množství tekutiny: polévka 400 ml, proteinový koktejl 200 ml, jogurtový krém 200 ml, proteinová tyčinka bez tekutiny (zobrazí se „–"). Čísla krabic odpovídají inventáři (tyčinky mají krabici 0).
