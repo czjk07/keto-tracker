@@ -1,7 +1,5 @@
 package cz.czjk07.ketotracker
 
-import android.graphics.Color
-
 data class Meal(
     val name: String,
     val box: Int,
@@ -34,38 +32,4 @@ object DietPlan {
     )
 
     val dayCount: Int get() = days.size
-
-    private val palette = intArrayOf(
-        0xFFEF5350.toInt(), // red
-        0xFFEC407A.toInt(), // pink
-        0xFFAB47BC.toInt(), // purple
-        0xFF7986CB.toInt(), // indigo
-        0xFF5C6BC0.toInt(), // deep purple/blue
-        0xFF42A5F5.toInt(), // blue
-        0xFF26C6DA.toInt(), // cyan
-        0xFF26A69A.toInt(), // teal
-        0xFF66BB6A.toInt(), // green
-        0xFF9CCC65.toInt(), // lime
-        0xFFFFA726.toInt(), // orange
-        0xFFFF7043.toInt(), // deep orange
-        0xFF8D6E63.toInt(), // brown
-        0xFF78909C.toInt(), // blue grey
-        0xFFFFCA28.toInt()  // amber
-    )
-
-    private val foodOrder: List<String> = days.flatten().map { it.name }.distinct()
-
-    fun colorFor(foodName: String): Int {
-        val index = foodOrder.indexOf(foodName)
-        return palette[index.coerceAtLeast(0) % palette.size]
-    }
-
-    fun tintOf(color: Int): Int =
-        Color.argb(0x2E, Color.red(color), Color.green(color), Color.blue(color))
-
-    fun darkOf(color: Int): Int = Color.rgb(
-        (Color.red(color) * 0.55f).toInt(),
-        (Color.green(color) * 0.55f).toInt(),
-        (Color.blue(color) * 0.55f).toInt()
-    )
 }

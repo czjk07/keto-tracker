@@ -77,20 +77,18 @@ class DietWidgetProvider : AppWidgetProvider() {
             for (i in 0 until DietWidgetState.MEALS_PER_DAY) {
                 val meal = meals[i]
                 val consumed = state.isConsumed(day, i)
-                val color = DietPlan.colorFor(meal.name)
-
-                views.setInt(rowIds[i], "setBackgroundColor", DietPlan.tintOf(color))
-                views.setFloat(rowIds[i], "setAlpha", if (consumed) 0.45f else 1.0f)
 
                 views.setTextViewText(nameIds[i], strike(meal.name, consumed))
-                views.setTextColor(nameIds[i], DietPlan.darkOf(color))
+                views.setTextColor(nameIds[i], COLOR_WHITE)
 
                 views.setTextViewText(boxIds[i], strike(meal.box.toString(), consumed))
-                views.setTextColor(boxIds[i], COLOR_GREY)
+                views.setTextColor(boxIds[i], COLOR_WHITE)
 
                 val liquidText = meal.liquidMl?.let { "$it ml" } ?: "–"
                 views.setTextViewText(liquidIds[i], strike(liquidText, consumed))
-                views.setTextColor(liquidIds[i], COLOR_GREY)
+                views.setTextColor(liquidIds[i], COLOR_WHITE)
+
+                views.setFloat(rowIds[i], "setAlpha", if (consumed) 0.45f else 1.0f)
 
                 val toggleIntent = Intent(context, DietWidgetProvider::class.java).apply {
                     action = ACTION_TOGGLE_MEAL
@@ -108,7 +106,7 @@ class DietWidgetProvider : AppWidgetProvider() {
             appWidgetManager.updateAppWidget(appWidgetId, views)
         }
 
-        private const val COLOR_GREY = 0xFF424242.toInt()
+        private const val COLOR_WHITE = 0xFFFFFFFF.toInt()
 
         private fun strike(text: String, strike: Boolean): CharSequence {
             if (!strike) return text
