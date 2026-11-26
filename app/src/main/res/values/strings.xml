@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Keto Tracker</string>
+    <string name="widget_name">Keto denní plán</string>
+    <string name="widget_description">15denní dieta – 3 jídla denně, klepnutím označíš snědené</string>
+    <string name="widget_title">Keto dieta</string>
+    <string name="info_text">Přidej widget „Keto denní plán" na plochu.\n\nKaždý řádek = jídlo – číslo krabice – množství tekutiny.\nKlepnutím na řádek označíš jídlo jako snědené (přeškrtnuté).\nAž jsou všechna 3 jídla dne splněná, widget se sám přepne na další den.</string>
+    <string name="reset_button">Resetovat dietu</string>
+    <string name="reset_done">Dieta byla resetována na 1. den</string>
+</resources>
