@@ -8,7 +8,7 @@ import android.content.Context
 import android.content.Intent
 import android.text.SpannableString
 import android.text.Spanned
-import android.text.style.StrikeThroughSpan
+import android.text.style.StrikethroughSpan
 import android.widget.RemoteViews
 
 class DietWidgetProvider : AppWidgetProvider() {
@@ -113,7 +113,7 @@ class DietWidgetProvider : AppWidgetProvider() {
         private fun strike(text: String, strike: Boolean): CharSequence {
             if (!strike) return text
             return SpannableString(text).apply {
-                setSpan(StrikeThroughSpan(), 0, length, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
+                setSpan(StrikethroughSpan(), 0, length, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
             }
         }
     }
