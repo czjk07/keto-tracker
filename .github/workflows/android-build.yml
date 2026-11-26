@@ -26,12 +26,8 @@ jobs:
           yes | "$SDKMANAGER" --licenses
           "$SDKMANAGER" "platforms;android-35" "build-tools;35.0.0"
 
-      - uses: gradle/actions/setup-gradle@v4
-        with:
-          arguments: wrapper --gradle-version 8.10.2
-
       - name: Build debug APK
-        run: chmod +x gradlew && ./gradlew assembleDebug
+        run: ./gradlew assembleDebug
 
       - uses: actions/upload-artifact@v4
         with:

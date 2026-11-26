@@ -13,19 +13,13 @@ Jednoduchý Android home-screen widget pro 15denní dietní plán (3 jídla denn
 
 ## Sestavení
 
-Projekt používá Gradle (AGP 8.7.3, Kotlin 2.0.21, Gradle 8.10.2), minSdk 26, žádné externí závislosti.
-
-Pokud nemáš vygenerovaný Gradle wrapper, vytvoř ho jednou příkazem:
-
-```bash
-gradle wrapper --gradle-version 8.10.2
-```
-
-Poté:
+Projekt používá Gradle (AGP 8.7.3, Kotlin 2.0.21, Gradle 8.10.2 — wrapper je součástí repozitáře), minSdk 26, žádné externí závislosti.
 
 ```bash
 ./gradlew assembleDebug
 ```
+
+APK vznikne v `app/build/outputs/apk/debug/app-debug.apk` (debug build je podepsaný debug klíčem a jde přímo nainstalovat). Pro release build přidej vlastní keystore do signing config. CI (GitHub Actions) sestaví APK automaticky ke každému pushi/PR a přiloží ho jako artifact ke běhu.
 
 nebo projekt otevři v Android Studiu a nainstaluj na zařízení. Widget přidej na plochu jako „Keto denní plán".
 
